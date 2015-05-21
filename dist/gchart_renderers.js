@@ -113,7 +113,6 @@
             title += " " + opts.localeStrings.by + " " + groupByTitle;
           }
         }
-        console.log('title: ', title);
         options = {
           width: opts.gchart.width(),
           height: opts.gchart.height(),
