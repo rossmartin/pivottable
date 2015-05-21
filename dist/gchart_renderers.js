@@ -90,7 +90,8 @@
                   if (val < 1) {
                     row.push(parseFloat(val.toPrecision(3)));
                   } else {
-                    row.push(parseFloat(val.toFixed(3)));
+                    var precision = (typeof opts.gchart.dataPrecision !== 'undefined') ? opts.gchart.dataPrecision : 3;
+                    row.push(parseFloat(val.toFixed(precision)));
                   }
                 } else {
                   row.push(val);
@@ -112,6 +113,7 @@
             title += " " + opts.localeStrings.by + " " + groupByTitle;
           }
         }
+        console.log('title: ', title);
         options = {
           width: opts.gchart.width(),
           height: opts.gchart.height(),
