@@ -152,6 +152,11 @@
           v = extraOptions[k];
           options[k] = v;
         }
+        if (opts.gchart.extras) {
+          for (var j in opts.gchart.extras) {
+            options[j] = opts.gchart.extras[j];
+          }
+        }
         result = $("<div>").css({
           width: "100%",
           height: "100%"

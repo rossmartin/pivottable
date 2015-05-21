@@ -65,6 +65,7 @@
         if pivotData.valAttrs.length
           fullAggName += '(' + pivotData.valAttrs.join(', ') + ')'
         headers = do ->
+          `var j`
           `var len`
           `var i`
           i = undefined
@@ -163,6 +164,9 @@
           `k = k`
           v = extraOptions[k]
           options[k] = v
+        if opts.gchart.extras
+          for j of opts.gchart.extras
+            options[j] = opts.gchart.extras[j]
         result = $('<div>').css(
           width: '100%'
           height: '100%')
